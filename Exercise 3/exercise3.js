@@ -189,31 +189,35 @@ console.log("The array in descending order is " + numbers);
 
 
 /************************************************************* */
-/*// Problem 8:
+// Problem 8:
 //add an example of at least 5 JavaScript data types to the given mapObj. 
 // The key is the example data type, and the value is the name of the data type.  
 //An object data type has already been set as the 1st key / val pair.
 console.log("Problem 8");
 let mapObj = new Map();
-//const a= {company : "TEKsystems"};
-//const b = "object";
-//mapObj.set(a,b);
+const compObj ={"company" : "Teksystems"}
+
+mapObj.set(compObj,"object");
 mapObj.set("Myname","String");
 mapObj.set(8,"Number");
 mapObj.set(true,"Boolean");
 mapObj.set([1,2,3,4,5],"Array");
 mapObj.set("","Undefined");
-console.log(mapObj.has({company : "TEKsystems"}));  
+console.log(mapObj.has({"company" : "Teksystems"}));  
 console.log(mapObj.has("Myname"));  
 console.log(mapObj.has(8));  
+console.log(mapObj.has(compObj));  
+
 
 //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false. 
-console.log("The previous line returns false as the has() property returns a boolean value depending on whether the specified key is present or not");
+console.log("The previous line returns false as the has() property returns a boolean value depending on whether the specified key is present or not and objects are stored as tuples in maps");
 // Refactor the code on line 106, so you can successfully check to see if {company : "TEKsystems"} exists in the mapObj.
 
 //your code...
 
 //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
+var x = [...mapObj.values()];
+console.log(x);
 
 
 /************************************************************* */
